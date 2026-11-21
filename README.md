@@ -1,10 +1,26 @@
 # EvaliPie Market
 
+> **Live Hosted URL (Frontend + Backend)**: [https://resistance-certified-fellowship-uploaded.trycloudflare.com/](https://resistance-certified-fellowship-uploaded.trycloudflare.com/)
+
+[![Live Website](https://img.shields.io/badge/Live%20Demo-Online-1B4332?style=for-the-badge&logo=cloudflare&logoColor=white)](https://resistance-certified-fellowship-uploaded.trycloudflare.com/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16%20ACID-111111?style=for-the-badge&logo=postgresql&logoColor=white)](https://resistance-certified-fellowship-uploaded.trycloudflare.com/)
+[![Kafka](https://img.shields.io/badge/Apache%20Kafka-3.8-B84A27?style=for-the-badge&logo=apachekafka&logoColor=white)](https://resistance-certified-fellowship-uploaded.trycloudflare.com/)
+[![OpenSearch](https://img.shields.io/badge/OpenSearch-2.15-0B57D0?style=for-the-badge&logo=opensearch&logoColor=white)](https://resistance-certified-fellowship-uploaded.trycloudflare.com/)
+
 **Architectural Real-Time Retail Engine** backed by **PostgreSQL** (ACID transactional source of truth), **Apache Kafka** (event-driven transactional outbox & consumer groups), and **OpenSearch** (sub-15ms typo-tolerant search and fuzzy matching).
 
 ```
 Storefront & 3D Gateway -> OpenSearch Search -> Multi-Hub Inventory -> ACID Checkout -> Postgres Outbox -> Kafka Event Bus -> Search Sync / Alerts
 ```
+
+---
+
+## Live Deployment & Access
+
+- **Public Endpoint**: [https://resistance-certified-fellowship-uploaded.trycloudflare.com/](https://resistance-certified-fellowship-uploaded.trycloudflare.com/)
+- **One-Click Demo Customer**: Click **`CONTINUE WITH DEMO ACCOUNT`** on the gateway (auto-authenticates `demo@stocksync.in` with Bengaluru fulfillment stock).
+- **One-Click Guest Access**: Click **`BROWSE AS GUEST`** on the gateway for instant catalog browsing without credentials.
+- **Admin Console**: `admin@stocksync.in` / `admin123` (Provides full telemetry, inventory adjustment, and outbox event streams).
 
 ---
 
@@ -65,12 +81,6 @@ npm run worker                     # In a second terminal: Kafka outbox publishe
 ```bash
 npm run test:e2e                   # Complete pipeline verification across Postgres, Kafka, & OpenSearch
 ```
-
----
-
-## Default Access Accounts
-- **Customer Demo**: `demo@stocksync.in` / `demo123` (Pre-seeded customer in Bengaluru)
-- **Admin Console**: `admin@stocksync.in` / `admin123` (Full inventory and event outbox telemetry)
 
 ---
 
