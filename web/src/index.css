@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #F6F5F0;
+    color: #111111;
+  }
+  body {
+    background-color: #F6F5F0;
+    font-family: "Space Grotesk", "Inter", system-ui, sans-serif;
+    color: #111111;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-image: 
+      linear-gradient(to right, rgba(228, 226, 218, 0.45) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(228, 226, 218, 0.45) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+  :focus-visible {
+    outline: 2px solid #111111;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    padding: 0.5rem 1rem;
+    border-radius: 2px;
+    border: 1px solid #111111;
+    background-color: #FFFFFF;
+    color: #111111;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 60ms ease, box-shadow 60ms ease, background-color 100ms ease;
+  }
+  .btn:active:not(:disabled) {
+    transform: translateY(1px);
+  }
+  .btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.45;
+  }
+  .btn-primary {
+    @apply btn bg-ink text-white border-ink hover:bg-black;
+  }
+  .btn-accent {
+    @apply btn bg-terracotta text-white border-terracotta hover:bg-terracotta-hover;
+  }
+  .btn-forest {
+    @apply btn bg-forest text-white border-forest hover:bg-forest-hover;
+  }
+  .btn-ghost {
+    @apply btn border-paper-grid bg-white text-ink hover:bg-paper-stone hover:border-ink-secondary;
+  }
+  .btn-danger {
+    @apply btn border-red-300 bg-white text-terracotta hover:bg-red-50;
+  }
+  .input {
+    width: 100%;
+    border-radius: 2px;
+    border: 1px solid #E4E2DA;
+    background-color: #FFFFFF;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8125rem;
+    color: #111111;
+    transition: border-color 100ms ease;
+  }
+  .input:focus {
+    border-color: #111111;
+    outline: none;
+  }
+  .card {
+    border-radius: 2px;
+    border: 1px solid #E4E2DA;
+    background-color: #FFFFFF;
+    box-shadow: 0 1px 3px rgba(17, 17, 17, 0.04);
+  }
+  .th {
+    padding: 0.625rem 0.875rem;
+    text-align: left;
+    font-size: 0.6875rem;
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 600;
+    color: #5A5852;
+    background-color: #ECEAE2;
+    border-bottom: 1px solid #E4E2DA;
+  }
+  .td {
+    padding: 0.75rem 0.875rem;
+    font-size: 0.8125rem;
+    border-bottom: 1px solid #E4E2DA;
+  }
+}
+
+/* 3D Spatial Transforms and Viewports */
+.perspective-stage {
+  perspective: 1400px;
+  transform-style: preserve-3d;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
